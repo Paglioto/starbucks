@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paglioto Dev | Desenvolvedor Front-End</title>
+  <link rel="icon" href="img/logo.jpg" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+      --accent: #703f83;
+      --card: #1c1c1c;
+      --nav-default: rgba(20, 0, 22, 0.7);
+      --nav-scroll: rgba(155, 89, 182, 0.9);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.5s ease, color 0.5s ease;
+      scroll-behavior: smooth;
+      background: linear-gradient(#000000, #1c1c1c);
+    }
+
+    header {
+      background-color: var(--nav-default);
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    header.scrolled {
+      background-color: var(--nav-scroll);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      background: linear-gradient(45deg, var(--accent), #6c3483);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeLogo 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeLogo {
+      from { opacity: 0.7; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.05); }
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover { color: #ffffff; }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat fixed;
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h2 { font-size: 36px; margin-bottom: 10px; color: var(--accent); }
+
+    .hero p { font-size: 18px; max-width: 600px; margin: 0 auto; }
+
+    .botoes { margin-top: 30px; }
+
+    .botao {
+      padding: 14px 28px;
+      margin: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(45deg, var(--accent), #6c3483);
+      color: var(--text);
+      box-shadow: 0 0 15px rgba(155, 89, 182, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .botao:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(155, 89, 182, 0.7);
+    }
+
+    .sobre, .projetos { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+    .sobre h3, .projetos h3 { font-size: 28px; color: var(--accent); text-align: center; }
+
+    .projetos-lista {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .projeto {
+      flex: 1 1 45%;
+      background-color: var(--card);
+      padding: 20px;
+      border-radius: 16px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      color: var(--text);
+      text-align: center;
+    }
+
+    .projeto img {
+      width: 70%;
+      border-radius: 12px;
+      border: 2px solid var(--accent);
+      transition: transform 0.5s ease;
+    }
+
+    .projeto:hover img { transform: scale(1.05); }
+
+    footer {
+      background-color: var(--card);
+      color: var(--text);
+      padding: 40px 20px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-section { flex: 1 1 200px; margin: 10px; }
+
+    .footer-section h3 { color: var(--accent); }
+
+    .footer-section ul { list-style: none; padding: 0; }
+
+    .footer-section ul li { margin-bottom: 10px; }
+
+    .footer-section ul li a { color: var(--text); text-decoration: none; }
+
+    .footer-section .social a {
+      margin-right: 10px;
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--accent);
+      margin-top: 20px;
+    }
+
+  </style>
+<body>
+
+  <header>
+    <h1>Paglioto Dev</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+      <span class="tema-btn">🌙</span>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Olá, eu sou Samuel Paglioto</h2>
+    <p>Desenvolvedor Front-End apaixonado por criar experiências digitais modernas, responsivas e animadas!</p>
+
+    <div class="botoes">
+      <button class="botao"><i data-lucide="folder"></i>Ver Projetos</button>
+      <button class="botao"><i data-lucide="mail"></i> Contato</button>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <h3>Sobre Mim</h3>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; justify-content: center;">
+      <img src="img/eu.png" alt="Samuel Paglioto" style="width: 400px; border-radius: 16px; border: 3px solid var(--accent);">
+      <p style="max-width: 600px;">
+        Sou Samuel Paglioto, um desenvolvedor front-end especializado em transformar ideias em interfaces incríveis. Tenho experiência com HTML, CSS, JavaScript e frameworks modernos. Meu foco é sempre entregar sites rápidos, responsivos e com animações que encantam.
+      </p>
+    </div>
+  </section>
+
+  <section id="projetos" class="projetos">
+    <h3>Meus Projetos</h3>
+    <div class="projetos-lista">
+      <div class="projeto">
+        <img src="img/projeto1.jpg" alt="Projeto 1">
+        <h4>Interface IA</h4>
+        <p>Site responsivo com animações JS, design único e foco em performance.</p>
+      </div>
+      <div class="projeto">
+        <img src="img/projeto2.jpg" alt="Projeto 2">
+        <h4>Streaming TV</h4>
+        <p>Landing page moderna com HTML, CSS e JS puro. Ideal para negócios e lançamentos.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <div class="footer-section about">
+      <h3>Sobre</h3>
+      <p>Desenvolvedor Front End</p>
+    </div>
+    <div class="footer-section links">
+      <h3>Links</h3>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-section social">
+      <h3>Redes Sociais</h3>
+      <ul>
+        <li><a href="https://github.com/Paglioto" target="_blank">GitHub</a></li>
+        <li><a href="#" target="_blank">Linkedin</a></li>
+        <li><a href="https://instagram.com/franca_samuka" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Paglioto Developer | Todos os direitos reservados
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const temaBtn = document.querySelector('.tema-btn');
+    let dark = true;
+    temaBtn.addEventListener('click', () => {
+      dark = !dark;
+      document.documentElement.style.setProperty('--bg', dark ? '#000000' : '#fffdf6');
+      document.documentElement.style.setProperty('--text', dark ? '#ffffff' : '#9b59b6');
+      document.documentElement.style.setProperty('--accent', dark ? '#9b59b6' : '#a0c878');
+      document.documentElement.style.setProperty('--card', dark ? '#1c1c1c' : '#faf6e9');
+      temaBtn.textContent = dark ? '🌙' : '☀️';
+    });
+  </script>
+</body>
+</html>
